@@ -1,0 +1,57 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM7iepmifw29SFziFRk4VRt",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/snehavagu-source/DataMining-/blob/main/program-2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "q-op_9lZfDH7"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "# Create a dummy input.csv file for demonstration\n",
+        "dummy_data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35], 'Salary': [50000, 60000, 70000]}\n",
+        "df_dummy = pd.DataFrame(dummy_data)\n",
+        "df_dummy.to_csv(\"input.csv\", index=False)\n",
+        "\n",
+        "# Extract\n",
+        "data = pd.read_csv(\"input.csv\")\n",
+        "\n",
+        "# Transform\n",
+        "data = data.dropna()\n",
+        "data['Salary'] = data['Salary'] * 1.1\n",
+        "\n",
+        "# Load\n",
+        "data.to_csv(\"output.csv\", index=False)\n",
+        "print(\"ETL Completed\")"
+      ]
+    }
+  ]
+}
